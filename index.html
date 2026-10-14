@@ -7,14 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
+  <!-- LOGIN / SIGN UP -->
+  <main id="authView" hidden>
+    <div class="auth">
+      <h1>💰 Money Tracker</h1>
+      <div class="tabs">
+        <button type="button" id="tabLogin" class="tab active">Log in</button>
+        <button type="button" id="tabSignup" class="tab">Create account</button>
+      </div>
+
+      <form id="authForm">
+        <input id="username" type="text" placeholder="Username" autocomplete="username" maxlength="20" required>
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+        <input id="password2" type="password" placeholder="Confirm password" autocomplete="new-password" hidden>
+        <button type="submit" id="authBtn">Log in</button>
+      </form>
+      <p id="authMsg" class="hint" role="status"></p>
+    </div>
+  </main>
+
+  <!-- APP -->
+  <main id="appView" hidden>
     <header>
       <h1>💰 Money Tracker</h1>
-      <label class="month">View:
-        <input type="month" id="month">
-        <button type="button" id="allTime" class="ghost">All time</button>
-      </label>
+      <div class="user"><small id="userName"></small><button type="button" id="logout" class="ghost">Log out</button></div>
     </header>
+    <label class="month">View:
+      <input type="month" id="month">
+      <button type="button" id="allTime" class="ghost">All time</button>
+    </label>
 
     <section class="cards">
       <div class="card"><span>Income</span><strong id="sumIncome">₱0.00</strong></div>
@@ -54,9 +75,12 @@
     <footer>
       <button type="button" id="export" class="ghost">Export backup</button>
       <label class="ghost btn">Import backup<input type="file" id="import" accept="application/json" hidden></label>
-      <small>Data is stored only in this browser. Export regularly.</small>
+      <small>Your data is private to your account.</small>
     </footer>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

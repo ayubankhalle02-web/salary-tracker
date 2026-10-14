@@ -33,3 +33,12 @@ li button{padding:4px 8px;background:transparent;color:var(--muted);border-color
 .bar .val{width:100px;text-align:right}
 footer{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0}
 footer small{color:var(--muted)}
+[hidden]{display:none!important}
+.auth{max-width:380px;margin:12vh auto 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px}
+.auth form{display:grid;gap:10px;margin-top:12px}
+.user{display:flex;align-items:center;gap:10px}
+.user small{color:var(--muted)}
+.month{margin-top:12px}
+.tabs{display:flex;gap:8px;margin-top:12px}
+.tab{flex:1;background:transparent;color:var(--muted);border:1px solid var(--line)}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
